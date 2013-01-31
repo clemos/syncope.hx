@@ -3,12 +3,18 @@ package syncope.test;
 import syncope.test.SomeLib;
 
 class Main {
+
+	static var lib : SomeLib;
 	
 	public static function main(){
+		var lib = new SomeLib();
+
 		Syncope.run( {
 			//var lib = ;
 			var b = SomeLib.test( 1 );
-			var test = new SomeLib().test2( 1 );
+			//
+
+			var test = Main.lib.test2( 1 );
 			trace(b);
 
 			

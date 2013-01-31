@@ -11,7 +11,7 @@ class Syncope {
 	
 	@:macro
 	public static function run( e : Expr ){
-		#if syncope_sync 
+		#if ( display || syncope_sync )
 			return e;
 		#else
 			return transform( e ).expr;

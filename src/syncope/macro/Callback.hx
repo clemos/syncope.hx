@@ -16,6 +16,10 @@ class Callback {
 		var pos = Context.currentPos();
         var fields = Context.getBuildFields();
 
+        #if ( display || syncope_sync )
+        return fields
+        #end
+
         for( f in fields ){
         	var isMarked = false;
 
