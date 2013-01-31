@@ -1,25 +1,12 @@
-package syncope;
-
-class Test {
-	
-	public static function main(){
-		Syncope.run( {
-			for( i in 0...10 ){
-				if( i > 5 ){
-					var toto = SomeLib.test( i );
-					var toto2 = SomeLib.test( i+1 );
-					SomeLib.notAsync(toto2);
-				}
-			}
-		} );
-
-	}
-}
+package syncope.test;
 
 class SomeLib implements syncope.Callback {
 
+	var whatever = "HI";
+
+	public function new(){}
+
 	@:makeCallback
-	@:async
 	public static function test( val : Int ) : String {
 		if( val > 5 )
 			return Std.string(val);
@@ -32,4 +19,11 @@ class SomeLib implements syncope.Callback {
 		return;
 	}
 
+	@:makeCallback
+	@:async
+	public function test2( val : Int ) : String {
+		return whatever;
+	}
+
 }
+

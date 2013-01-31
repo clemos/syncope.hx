@@ -1,9 +1,9 @@
--main syncope.Test
+-main syncope.test.Main
 -cp src
 -js bin/test.js
 
 --next
 -D syncope_sync
--main syncope.Test
+-main syncope.test.Main
 -cp src
 -php bin/php

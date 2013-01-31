@@ -27,7 +27,13 @@ class Callback {
         	}
 
         	if( isMarked ){
-
+        		
+        		f.meta.push( {
+        			pos : f.pos,
+        			name : Syncope.asyncMeta,
+        			params : []
+        		} );
+        		
         		var void = TPath( { sub : null , name : "Void" , pack : [] , params : [] } );
 
 	        	switch( f.kind ){

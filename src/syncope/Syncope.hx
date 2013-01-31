@@ -108,11 +108,26 @@ class Syncope {
 
 		switch( e.expr ){
 			case EField( e2 , methodName ) :
+				//trace("e2 : "+Context.typeof( e2 ));
+				var eType = Context.typeof( e2 );
+				//trace( e2.expr );
+				switch( eType ){
+					case TInst( t , params ) :
+						//trace(t.get());
+						for( f in t.get().fields.get() ){
+							if( f.name == methodName 
+								&& f.meta.has( asyncMeta ) ){
+								return true;
+							}
+						}
+					default:
+				}
 				switch( e2.expr ){
 					case EConst( c ) :
 						switch( c ){
 							case CIdent( cl ) :
 								//trace("type of " + cl );
+
 								switch( Context.getType( cl ) ){
 									case TInst( ref , params ) :
 										for( m in ref.get().statics.get() ){
