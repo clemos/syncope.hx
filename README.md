@@ -13,7 +13,7 @@ asynchronous platforms (like node.js) and synchronous platforms (like php).
 
 ## Usage
 
-### Transforming synchronous signatures to asynchronous
+### Transforming synchronous methods to asynchronous
 
 In a class that implements `syncope.Callback`, methods marked with the `@:makeCallback` meta 
 will be automatically translated to an asynchronous method. 
